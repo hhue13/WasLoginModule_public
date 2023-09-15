@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>at.2innovate.common.maven.poms</groupId>
+		<artifactId>2innovate-corporate-pom</artifactId>
+		<version>4.2.8</version>
+		<relativePath />
+	</parent>
+
+	<groupId>at.2innovate.portal.jaas</groupId>
+	<artifactId>LoginModules</artifactId>
+	<version>0.0.3-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>LoginModules</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Define the targets that we compile against -->
+		<version.wp_target>8.0.0</version.wp_target>
+		<version.was_target>${version.wp_target}</version.was_target>
+		<!-- Define the base used for overlay; This should always be equal or higher to wp_target -->
+		<version.wp_base>8.0.0.1</version.wp_base>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<!-- was_public.jar -->
+		<dependency>
+			<groupId>com.ibm.websphere.appserver</groupId>
+			<artifactId>was_public</artifactId>
+			<version>9.0.0</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.tools.target</groupId>
+			<artifactId>was</artifactId>
+			<version>8.0.0</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bitbucket.b_c</groupId>
+			<artifactId>jose4j</artifactId>
+			<version>0.6.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.json -->
+		<dependency>
+				<groupId>com.ibm.websphere.appserver.api</groupId>
+				<artifactId>com.ibm.websphere.appserver.api.json</artifactId>
+				<version>1.0.30</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.26</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.26</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- wp.auth.tai.jar -->
+		<dependency>
+			<groupId>com.ibm.portal.auth</groupId>
+			<artifactId>tai</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- com.ibm.ws.runtime.wim.base.jar -->
+		<dependency>
+			<groupId>com.ibm.websphere.ws</groupId>
+			<artifactId>com.ibm.ws.runtime.wim.base</artifactId>
+			<version>9.0.0</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
